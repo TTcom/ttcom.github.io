@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>获取数组中出现次数最多的字符 | Uphold</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="alien.ico">
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.35bcedcf.css" as="style"><link rel="preload" href="/assets/js/app.84ca1a63.js" as="script"><link rel="preload" href="/assets/js/2.8b9be96d.js" as="script"><link rel="preload" href="/assets/js/8.7e6877be.js" as="script"><link rel="prefetch" href="/assets/js/10.8b1ab84d.js"><link rel="prefetch" href="/assets/js/11.4f31a684.js"><link rel="prefetch" href="/assets/js/12.41a93c24.js"><link rel="prefetch" href="/assets/js/13.f9e7321c.js"><link rel="prefetch" href="/assets/js/14.f80f3f2a.js"><link rel="prefetch" href="/assets/js/15.26478412.js"><link rel="prefetch" href="/assets/js/16.bea20730.js"><link rel="prefetch" href="/assets/js/17.a5074c60.js"><link rel="prefetch" href="/assets/js/18.e80bccf0.js"><link rel="prefetch" href="/assets/js/19.789096c7.js"><link rel="prefetch" href="/assets/js/20.a240af5a.js"><link rel="prefetch" href="/assets/js/21.d5ca55d4.js"><link rel="prefetch" href="/assets/js/22.2b64ea60.js"><link rel="prefetch" href="/assets/js/23.554f9f1e.js"><link rel="prefetch" href="/assets/js/24.27e34ebf.js"><link rel="prefetch" href="/assets/js/25.7a94551b.js"><link rel="prefetch" href="/assets/js/26.99ed7c79.js"><link rel="prefetch" href="/assets/js/27.51973d9b.js"><link rel="prefetch" href="/assets/js/28.19222b94.js"><link rel="prefetch" href="/assets/js/29.742c53c7.js"><link rel="prefetch" href="/assets/js/3.dd4687c9.js"><link rel="prefetch" href="/assets/js/30.7e38bd5b.js"><link rel="prefetch" href="/assets/js/31.80046e8c.js"><link rel="prefetch" href="/assets/js/32.f0c72ea9.js"><link rel="prefetch" href="/assets/js/33.a90649f6.js"><link rel="prefetch" href="/assets/js/34.870419c5.js"><link rel="prefetch" href="/assets/js/35.a4a1d75a.js"><link rel="prefetch" href="/assets/js/36.d0983127.js"><link rel="prefetch" href="/assets/js/37.2f4131eb.js"><link rel="prefetch" href="/assets/js/38.75601430.js"><link rel="prefetch" href="/assets/js/39.13c94d78.js"><link rel="prefetch" href="/assets/js/4.2a5d96fc.js"><link rel="prefetch" href="/assets/js/40.1afda1b2.js"><link rel="prefetch" href="/assets/js/41.57308874.js"><link rel="prefetch" href="/assets/js/42.4b38aba2.js"><link rel="prefetch" href="/assets/js/43.c8d59038.js"><link rel="prefetch" href="/assets/js/44.bb9ff8f2.js"><link rel="prefetch" href="/assets/js/45.eba8444c.js"><link rel="prefetch" href="/assets/js/46.c504726f.js"><link rel="prefetch" href="/assets/js/47.cdca350e.js"><link rel="prefetch" href="/assets/js/48.d8e63044.js"><link rel="prefetch" href="/assets/js/49.82c9087d.js"><link rel="prefetch" href="/assets/js/5.2c4f59fc.js"><link rel="prefetch" href="/assets/js/50.9aebbc95.js"><link rel="prefetch" href="/assets/js/51.9ac1c87f.js"><link rel="prefetch" href="/assets/js/52.00fa92b8.js"><link rel="prefetch" href="/assets/js/53.fb2c1e5a.js"><link rel="prefetch" href="/assets/js/54.3e9629eb.js"><link rel="prefetch" href="/assets/js/55.e5a45980.js"><link rel="prefetch" href="/assets/js/56.23bf25d7.js"><link rel="prefetch" href="/assets/js/57.bc4d01b1.js"><link rel="prefetch" href="/assets/js/58.3f32611b.js"><link rel="prefetch" href="/assets/js/59.eedef3e6.js"><link rel="prefetch" href="/assets/js/6.004ca1a2.js"><link rel="prefetch" href="/assets/js/60.9785ef94.js"><link rel="prefetch" href="/assets/js/61.d950f1ae.js"><link rel="prefetch" href="/assets/js/62.b5ebab45.js"><link rel="prefetch" href="/assets/js/63.cb2674dc.js"><link rel="prefetch" href="/assets/js/7.b86c66fa.js"><link rel="prefetch" href="/assets/js/9.ea41c8c9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35bcedcf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Uphold</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/note/" class="nav-link">
+  study
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/array/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  数组练习
+</a></div><div class="nav-item"><a href="/javascript/" class="nav-link">
+  javascript
+</a></div><div class="nav-item"><a href="/typescript/" class="nav-link">
+  typescript
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  webpack
+</a></div><div class="nav-item"><a href="/nginx/" class="nav-link">
+  Nginx
+</a></div><div class="nav-item"><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/note/" class="nav-link">
+  study
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/array/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  数组练习
+</a></div><div class="nav-item"><a href="/javascript/" class="nav-link">
+  javascript
+</a></div><div class="nav-item"><a href="/typescript/" class="nav-link">
+  typescript
+</a></div><div class="nav-item"><a href="/webpack/" class="nav-link">
+  webpack
+</a></div><div class="nav-item"><a href="/nginx/" class="nav-link">
+  Nginx
+</a></div><div class="nav-item"><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>数组练习</span> <!----></p> <!----></section></li><li><a href="/array/" aria-current="page" class="active sidebar-link">获取数组中出现次数最多的字符</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/array/flat.html" class="sidebar-link">ES10flat</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="获取数组中出现次数最多的字符"><a href="#获取数组中出现次数最多的字符" class="header-anchor">#</a> 获取数组中出现次数最多的字符</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'v'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">,</span><span class="token string">'v'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'n'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">,</span><span class="token string">'v'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">var</span> res<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+	
+	arr<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span>i</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+		
+		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>res<span class="token punctuation">[</span>value<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			res<span class="token punctuation">[</span>value<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span>
+		<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+			res<span class="token punctuation">[</span>value<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	
+	<span class="token keyword">var</span> keys <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token keyword">var</span> maxnum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>maxvalue<span class="token punctuation">;</span>
+	
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>keys<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	keys<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span>i</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+		
+		<span class="token keyword">if</span><span class="token punctuation">(</span>res<span class="token punctuation">[</span>value<span class="token punctuation">]</span><span class="token operator">&gt;</span>maxnum<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			maxnum<span class="token operator">=</span>res<span class="token punctuation">[</span>value<span class="token punctuation">]</span><span class="token punctuation">;</span>
+			maxvalue<span class="token operator">=</span>value<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;出现次数最多的字符是&quot;</span><span class="token operator">+</span>maxvalue<span class="token operator">+</span><span class="token string">&quot;出现的次数为&quot;</span><span class="token operator">+</span>maxnum<span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/array/flat.html">
+        ES10flat
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.84ca1a63.js" defer></script><script src="/assets/js/2.8b9be96d.js" defer></script><script src="/assets/js/8.7e6877be.js" defer></script>
+  </body>
+</html>
